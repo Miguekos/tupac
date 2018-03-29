@@ -19,26 +19,38 @@ function showHint(str) {
     }
 }
 </script>
+<div class="container text-center col-lg-12">
 
-<div class="text-center">
-    <h2><p><b>Caja Registradora</b></p></h2>
-    <!-- <form>  -->
-        ID: <input class="form-group" autofocus type="text" id="id" onkeyup="showHint(this.value)">
-        Cantidad: <input class="form-group" type="text" id="monto">
-        <input type="submit" value="Agregar" onclick="agregarProducto(),clean(),operar('multiplicar')" class="btn btn-lg btn-default"></input>
-    <!-- </form> -->
-</div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="col-lg-12">
+                <h2 class="jumbotron"><p><b>Caja Registradora</b></p></h2>
+                <!-- <form>  -->
+                <div class="col-lg-6">
+                    ID: <input class="form-control" autofocus type="text" id="id" onkeyup="showHint(this.value)">
+                </div>
+                <div class="col-lg-6">
+                    Cantidad: <input class="form-control" type="text" id="monto">
+                </div>
+                
+                <input type="submit" value="Agregar" onclick="agregarProducto(),clean(),operar('multiplicar')" class="btn btn-lg btn-default"></input>
+                <!-- <div class="col-lg-4"> -->
+                    
+                <!-- </div> -->
+                <!-- </form> -->
+            </div>
+
+
 <p> <span id="txtHint"></span></p>
 
-    <div class="container">
-        <from>
-            <h2>Productos Agregados</h2>
+        <from>                
+            <!-- <h2>Productos Agregados</h2> -->
 
             <input type="hidden" id="ListaPro" name="ListaPro" value="" required />
             <table id="TablaPro" class="table">
                 <thead>
                     <tr>
-                        <th>Producto</th>
+                        <th style="width:80%">Producto</th>
                         <th>Cantidad</th>
                         <th>Precio</th>
                         <th>Total</th>
@@ -56,7 +68,7 @@ function showHint(str) {
                         <td>Total</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td><span id="total_1">0</span> <span class="form-control" type="" id="total_final" name="total_final" value="0" readonly> </span></td>
+                        <td><input type="hidden" id="total_1" value="0" /> <span class="form-control" type="" id="total_final" name="total_final" value="0" readonly> </span></td>
                         <td>&nbsp;</td>
                     </tr>
                 </tfoot>
@@ -71,7 +83,8 @@ function showHint(str) {
 
 
         </div>
+        </div>
 
-    </div>
-
+    
 <script src="caja.js"></script>
+<div class="col-lg-3"></div>

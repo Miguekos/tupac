@@ -41,7 +41,7 @@ function agregarProducto() {
     RefrescaProducto(); //Refresco Productos
 
     $('.remove-item').off().click(function(e) {
-        var total = document.getElementById("total");
+        var total = document.getElementById("total_1");
         total.innerHTML = parseFloat(total.innerHTML) - parseFloat(this.parentNode.parentNode.childNodes[3].childNodes[0].value);
         $(this).parent('td').parent('tr').remove(); //En accion elimino el Producto de la Tabla
         if ($('#ProSelected tr.item').length == 0)
@@ -59,13 +59,14 @@ var i = 0;
 
 function operar(x){
     
-    // var totalt =  document.getElementById("total_1").innerHTML;    
+    var totalt =  eval(document.getElementById("total_1").value);
+    // console.log(totalt + 10); 
 
     var idP = document.getElementById("idP").innerHTML;
     var valor_01 = document.getElementById("precio").innerHTML;
     var valor_02 = eval(document.getElementById('monto').value);
-    console.log(valor_01);
-    console.log(valor_02);
+    // console.log(valor_01);
+    // console.log(valor_02);
     switch(x){
         case('sumar'):
             var resultado = valor_01 + valor_02;
@@ -80,11 +81,15 @@ function operar(x){
             var resultado = valor_01 / valor_02;
             break;
     }
-    document.getElementById('totalitem['+idP+']').value = resultado;
+    document.getElementById('totalitem['+idP+']').value = resultado.toFixed(2);
+    var sum = eval(document.getElementById('totalitem['+idP+']').value);
     
-    
-    // document.getElementById('total_1').innerHTML = resultado;
-    // document.getElementById('total_final').innerHTML = 0 + resultado + totalt;
+    // console.log(sum + 2);
+    // document.getElementById('total_1').value = sum;
+    document.getElementById('total_1').value = sum + totalt;
+    totalF = sum + totalt;
+
+    document.getElementById('total_final').innerHTML = totalF.toFixed(2);
     // console.log(0 + totalt + resultado);
     // var qwe = document.getElementById('totalitem['+idP+']').innerText;
     // console.log("qwe " + resultado);
