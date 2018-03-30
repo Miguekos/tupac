@@ -49,10 +49,9 @@ function showHint(str) {
                 <!-- </div> -->
                 <!-- </form> -->
             </div>
-            <form action="guardar.php" method="POST" id="guardar" accept-charset="utf-8">        
-            
+                        
             <p> <span id="txtHint"></span></p>
-
+            <form action="guardar.php" method="POST" >
                   
             <!-- <h2>Productos Agregados</h2> -->
 
@@ -76,10 +75,10 @@ function showHint(str) {
                 <tfoot>
                     <tr>
                         <td>Total</td>
-                        <td><div id="items" name="items">0</div></td>
+                        <td><input class="form-control" id="items" name="items" /></td>
                         <td>&nbsp;</td>
                         <td>
-                            <input type="hidden" id="total_1" value="0" /> <span class="form-control" type="" id="total_final" name="total_final" value="0" readonly> </span>
+                            <input type="hidden" id="total_1" name="total_1" value="0" /> <span class="form-control" type="" id="total_final" name="total_final" value="0" readonly> </span>
                         </td>
                         <td>&nbsp;</td>
                     </tr>

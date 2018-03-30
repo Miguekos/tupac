@@ -160,7 +160,7 @@ var i = 0;
  
 function contador(){
     i = i + 1;
-    document.getElementById('items').innerHTML = i;
+    document.getElementById('items').value = i;
 
     console.log(i);
 }
@@ -171,6 +171,7 @@ function enter1(){
     {
       $('#monto').focus();
       $('#monto').val('');
+      // event.returnValue=false;
     }
 }
 
