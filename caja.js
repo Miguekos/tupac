@@ -140,7 +140,7 @@ function Calcular(ele) {
 
 function clean() {
     $('#id').val('');
-    // $('#monto').innerHTML('');
+    // $('#monto').val('');
     $('#id').focus();
   }
 
@@ -163,4 +163,20 @@ function contador(){
     document.getElementById('items').innerHTML = i;
 
     console.log(i);
+}
+
+
+function enter1(){
+    if (event.keyCode == 13)
+    {
+      $('#monto').focus();
+      $('#monto').val('');
+    }
+}
+
+function enter2(){
+    if (event.keyCode == 13)
+    {
+      $('#btn').focus();
+    }
 }

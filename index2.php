@@ -20,17 +20,21 @@ function showHint(str) {
 }
 </script>
 <div class="container text-center col-lg-12">
+
+
+
+  
     
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
             <div class="col-lg-12">
-                <h2 class="jumbotron"><p><b>Caja Registradora</b></p></h2>
+                <h1 class=""><p><b>Caja Registradora</b></p></h1>
                 <!-- <form>  -->
                 <div class="col-lg-6">
-                    ID: <input class="form-control" autofocus type="text" id="id" onkeyup="showHint(this.value)">
+                    ID: <input onkeydown="enter1()" class="form-control" autofocus type="text" id="id" onkeyup="showHint(this.value)">
                 </div>
                 <div class="col-lg-6">
-                    Cantidad: <input class="form-control" type="text" name="cantidad" id="monto">
+                    Cantidad: <input class="form-control" onkeydown="enter2()" type="text" name="cantidad" id="monto">
                 </div>
                 
                 <!-- <input type="submit" value="Agregar" onclick="agregarProducto(),clean(),operar('multiplicar')" class="btn btn-lg btn-default"></input> -->
@@ -38,7 +42,7 @@ function showHint(str) {
                 
                 <div>
                     <!-- <a class="btn btn-info" type="button" onclick="agregarProducto(),clean(),operar('multiplicar')">email me</a> -->
-                    <button onclick="agregarProducto(),clean(),operar('multiplicar'),contador()" style="border-top-width: 1px; margin-top: 10px;" class="btn btn-success">Agregar</button>
+                    <button id="btn" onkeyup="agregarProducto(),clean(),operar('multiplicar'),contador()" style="border-top-width: 1px; margin-top: 10px;" class="btn btn-success"></button>
                 </div>
                 <!-- <div class="col-lg-4"> -->
                     
