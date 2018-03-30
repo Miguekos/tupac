@@ -91,8 +91,8 @@ function showHint(str) {
                 <button type="submit" class="btn btn-lg btn-info pull-right">Imprimir</button>
             </div>
         </from>
-        <a onclick="titulo()">email me</a>
-        <a onclick="nombres()">nombres</a>
+        <!-- <a onclick="titulo()">email me</a>
+        <a onclick="nombres()">nombres</a> -->
         <!-- <button id="guardar"  name="guardar" class="btn btn-lg btn-danger pull-right">Calcular</button>  -->
 
 
