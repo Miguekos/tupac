@@ -32,11 +32,12 @@ function agregarProducto() {
 
     // var sptext = text.split();
 
-    var newtr = '<tr class="item"  data-id="' + nombre + '">';
-    newtr = newtr + '<td class="iProduct" >' + nombre + '</td>';
+    var newtr = '<tr class="item" id="nombreTr" data-id="' + nombre + '">';
+    newtr = newtr + '<td name="nombreTd" class="iProduct" >' + nombre + '</td>';
     // newtr = newtr + '<td><input class="form-control" type="text" id="cantidad[]" readonly name="lista[]" onload="Calcular(this);" value="'+ precio +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="lista[]" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem[]" name="lista[]" readonly /></td>';
-    newtr = newtr + '<td><input class="form-control" type="text" id="cantidad'+idP+'" readonly name="cantidad'+idP+'" onload="Calcular(this);" value="'+ cantidad +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="precio'+idP+'" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem'+idP+'" name="totalitem'+idP+'" readonly /></td>';
-    newtr = newtr + '<td><button type="button" class="btn btn-danger btn-xs remove-item" ><i class="fa fa-times">Eliminar</i></button></td></tr>';
+    // newtr = newtr + '<td><input class="form-control" type="text" id="cantidad'+idP+'" readonly name="cantidad'+idP+'" onload="Calcular(this);" value="'+ cantidad +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="precio'+idP+'" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem'+idP+'" name="totalitem'+idP+'" readonly /></td>';
+    newtr = newtr + '<td><input class="form-control" type="text" id="cantidad'+idP+'" readonly name="cantidad'+idP+'" onload="Calcular(this);" value="'+ cantidad +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="precio'+idP+'" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem'+idP+'" name="totalitem[]" readonly /></td>';
+    newtr = newtr + '<td><button type="button" name="contar[]" class="btn btn-danger btn-xs remove-item" ><i class="fa fa-times">Eliminar</i></button></td></tr>';
 
     $('#ProSelected').append(newtr); //Agrego el Producto al tbody de la Tabla con el id=ProSelected
 
@@ -134,7 +135,7 @@ function Calcular(ele) {
         total.innerHTML = 0;
         // 
     }
-    total.innerHTML = parseFloat(total.innerHTML)+totalitem-anterior ;    
+    total.innerHTML = parseFloat(total.innerHTML)+totalitem -anterior ;    
 }
 
 
@@ -180,4 +181,41 @@ function enter2(){
     {
       $('#btn').focus();
     }
+}
+
+
+// function titulo(){
+//     // document.getElementById('total_final').innerHTML = Cambio;
+//     var titulo = document.getElementById('nombreP').innerHTML;
+//     console.log(titulo);
+// }
+
+// function nombres(){
+//     el=document.getElementById('nombreTr'); 
+//     els=el.getElementsByTagName('nombreTd');
+//     // els=el.getElementById('totalitem[*]'); 
+//     console.log(els);
+//     vec=[] 
+//     for(i=0;i<els.length;i++){ 
+//         if(els[i].parentNode==el) 
+//             vec.push(els[i]); 
+//     } 
+//     alert(vec.length); 
+// }
+
+// var ids = [];
+// $('.right').each(function(key, element){
+//   ids.push($(element).parent().attr('id'));
+// });
+function nombres(){
+  var elementos = document.getElementsByName("nombreTd");
+  alert("Hay " + elementos.length + " 3 productos selecionados");
+ 
+  texto = "";
+ 
+  for (x=0;x<elementos.length;x++)
+    texto =  texto + elementos[x].innerHTML + "\n";
+ 
+  alert("Se han encontrado los siguientes valores en elementos 'nombreTd'\n" + texto);
+ 
 }
