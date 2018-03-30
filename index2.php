@@ -20,7 +20,7 @@ function showHint(str) {
 }
 </script>
 <div class="container text-center col-lg-12">
-
+    
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
             <div class="col-lg-12">
@@ -30,20 +30,26 @@ function showHint(str) {
                     ID: <input class="form-control" autofocus type="text" id="id" onkeyup="showHint(this.value)">
                 </div>
                 <div class="col-lg-6">
-                    Cantidad: <input class="form-control" type="text" id="monto">
+                    Cantidad: <input class="form-control" type="text" name="cantidad" id="monto">
                 </div>
                 
-                <input type="submit" value="Agregar" onclick="agregarProducto(),clean(),operar('multiplicar')" class="btn btn-lg btn-default"></input>
+                <!-- <input type="submit" value="Agregar" onclick="agregarProducto(),clean(),operar('multiplicar')" class="btn btn-lg btn-default"></input> -->
+                
+                
+                <div>
+                    <!-- <a class="btn btn-info" type="button" onclick="agregarProducto(),clean(),operar('multiplicar')">email me</a> -->
+                    <button onclick="agregarProducto(),clean(),operar('multiplicar'),contador()" style="border-top-width: 1px; margin-top: 10px;" class="btn btn-success">Agregar</button>
+                </div>
                 <!-- <div class="col-lg-4"> -->
                     
                 <!-- </div> -->
                 <!-- </form> -->
             </div>
+            <form action="guardar.php" method="POST" id="guardar" accept-charset="utf-8">        
+            
+            <p> <span id="txtHint"></span></p>
 
-
-<p> <span id="txtHint"></span></p>
-
-        <from>                
+                  
             <!-- <h2>Productos Agregados</h2> -->
 
             <input type="hidden" id="ListaPro" name="ListaPro" value="" required />
@@ -66,17 +72,19 @@ function showHint(str) {
                 <tfoot>
                     <tr>
                         <td>Total</td>
+                        <td><div id="items" name="items">0</div></td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td><input type="hidden" id="total_1" value="0" /> <span class="form-control" type="" id="total_final" name="total_final" value="0" readonly> </span></td>
+                        <td>
+                            <input type="hidden" id="total_1" value="0" /> <span class="form-control" type="" id="total_final" name="total_final" value="0" readonly> </span>
+                        </td>
                         <td>&nbsp;</td>
                     </tr>
                 </tfoot>
             </table>
             <!--Agregue un boton en caso de desear enviar los productos para ser procesados-->
             <div class="form-group">
-                <button type="submit" id="guardar" onclick="operar('multiplicar');" name="guardar" class="btn btn-lg btn-default pull-right">Calcular</button>
-                <button type="submit" id="guardar" onclick="operar('multiplicar');" name="guardar" class="btn btn-lg btn-default pull-right">Imprimir</button>
+                <button type="submit" id="guardar" onclick="operar('multiplicar');" name="guardar" class="btn btn-lg btn-danger pull-right">Calcular</button> 
+                <button type="submit" class="btn btn-lg btn-info pull-right">Imprimir</button>
             </div>
         </from>
 
