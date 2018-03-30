@@ -33,7 +33,7 @@ function agregarProducto() {
     // var sptext = text.split();
 
     var newtr = '<tr class="item" id="nombreTr" data-id="' + nombre + '">';
-    newtr = newtr + '<td name="nombreTd" class="iProduct" >' + nombre + '</td>';
+    newtr = newtr + '<td name="nombreTd'+idP+'" class="iProduct" >' + nombre + '</td>';
     // newtr = newtr + '<td><input class="form-control" type="text" id="cantidad[]" readonly name="lista[]" onload="Calcular(this);" value="'+ precio +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="lista[]" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem[]" name="lista[]" readonly /></td>';
     // newtr = newtr + '<td><input class="form-control" type="text" id="cantidad'+idP+'" readonly name="cantidad'+idP+'" onload="Calcular(this);" value="'+ cantidad +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="precio'+idP+'" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem'+idP+'" name="totalitem'+idP+'" readonly /></td>';
     newtr = newtr + '<td><input class="form-control" type="text" id="cantidad'+idP+'" readonly name="cantidad'+idP+'" onload="Calcular(this);" value="'+ cantidad +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="precio'+idP+'" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem'+idP+'" name="totalitem[]" readonly /></td>';
