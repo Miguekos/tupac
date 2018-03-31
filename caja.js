@@ -15,7 +15,7 @@ function RefrescaProducto() {
     var ipt = JSON.stringify(ip); //Convierto la Lista de Productos a un JSON para procesarlo en tu controlador
     $('#ListaPro').val(encodeURIComponent(ipt));
 }
-
+d = 1;
 function agregarProducto() {
     var idP = document.getElementById("idP").innerHTML;
     var nombre = document.getElementById("nombre").innerHTML;
@@ -31,13 +31,15 @@ function agregarProducto() {
 
 
     // var sptext = text.split();
-
+    
     var newtr = '<tr class="item" id="nombreTr" data-id="' + nombre + '">';
     newtr = newtr + '<td name="nombreTd'+idP+'" class="iProduct" >' + nombre + '</td>';
     // newtr = newtr + '<td><input class="form-control" type="text" id="cantidad[]" readonly name="lista[]" onload="Calcular(this);" value="'+ precio +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="lista[]" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem[]" name="lista[]" readonly /></td>';
     // newtr = newtr + '<td><input class="form-control" type="text" id="cantidad'+idP+'" readonly name="cantidad'+idP+'" onload="Calcular(this);" value="'+ cantidad +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="precio'+idP+'" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem'+idP+'" name="totalitem'+idP+'" readonly /></td>';
     newtr = newtr + '<td><input class="form-control" type="text" id="cantidad'+idP+'" readonly name="cantidad'+idP+'" onload="Calcular(this);" value="'+ cantidad +'" /></td><td><input class="form-control" type="text" id="precunit[]" name="precio'+idP+'" readonly onChange="Calcular(this);" value="'+ precio +'"/></td><td><input class="form-control" type="text" id="totalitem'+idP+'" name="totalitem[]" readonly /></td>';
     newtr = newtr + '<td><button type="button" name="contar[]" class="btn btn-danger btn-xs remove-item" ><i class="fa fa-times">Eliminar</i></button></td></tr>';
+    newtr = newtr + '<input class="form-control" type="hidden" id="idprod'+d+'" readonly name="asd'+d+'" value="'+ idP +'"/>';
+    d = d + 1;
 
     $('#ProSelected').append(newtr); //Agrego el Producto al tbody de la Tabla con el id=ProSelected
 
@@ -163,7 +165,7 @@ function contador(){
     i = i + 1;
     document.getElementById('items').value = i;
 
-    console.log(i);
+    // console.log(i);
 }
 
 
@@ -172,6 +174,16 @@ function enter1(){
     {
       $('#monto').focus();
       $('#monto').val('');
+      // event.returnValue=false;
+    }
+}
+
+function imprimir(){
+    if (event.keyCode == 120)
+    {
+      $('#imprimir').focus();
+      // $('#monto').val('');
+      // console.log("imprimir");
       // event.returnValue=false;
     }
 }

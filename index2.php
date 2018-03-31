@@ -32,7 +32,7 @@ function showHint(str) {
                 <h1 id="titulo"><p><b></b></p></h1>
                 <!-- <form>  -->
                 <div class="col-lg-6">
-                    ID: <input onkeydown="enter1()" class="form-control" autofocus type="text" id="id" onkeyup="showHint(this.value)">
+                    ID: <input onkeydown="enter1(),imprimir()" class="form-control" autofocus type="text" id="id" onkeyup="showHint(this.value)">
                 </div>
                 <div class="col-lg-6">
                     Cantidad: <input class="form-control" onkeydown="enter2()" type="text" name="cantidad" id="monto">
@@ -88,7 +88,7 @@ function showHint(str) {
             <!--Agregue un boton en caso de desear enviar los productos para ser procesados-->
             <div class="form-group">
                 
-                <button type="submit" class="btn btn-lg btn-info pull-right">Imprimir</button>
+                <button type="submit" onkeyup="submit()" id="imprimir" class="btn btn-lg btn-info pull-right">Imprimir</button>
             </div>
         </from>
         <!-- <a onclick="titulo()">email me</a>

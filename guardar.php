@@ -18,9 +18,35 @@ div {
     /* margin-left: 50%;
     margin-right: 50%; */
     text-align: center;
-    /* background-color: lightblue; */
+    background-color: lightblue; 
     margin-left: 41%;
     margin-right: 41%;
+}
+
+table, td, th {
+    /*border: 1px solid black;*/
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
+
+.text-center{
+    text-align: center;
+
+}
+
+.pull-right{
+    padding-right:5px;
+    padding-left:0;
+    text-align:right;
+    border-right:5px solid #eee;
+    border-left:0
 }
 
 </style>
@@ -38,9 +64,9 @@ mysqli_select_db($con,"ajax_demo");
 $nu4 = 0;
 
 echo "<div class='centro'>";
-echo "PLAZAVEA - SUPERMECADOS PERUANOS S.A <br>";
+echo "PLAZAVEA - SUPERMECADOS S.A <br>";
 echo "RUC 2000000000 Morelli 181 P-2 Lima <br>";
-echo "Lima - San Borja <br>";
+// echo "Lima - San Borja <br>";
 echo "BOLETA DE VENTA ELECTRONICA <br>";
 echo "BC19 - 00095376 <br>";
 echo "<br>";
@@ -52,14 +78,16 @@ echo "<table class=''>
   </tr>
   <tr>";
 
-for($x = 0; $x <= count($_POST['totalitem']); $x++) {			
-		$sql = "SELECT * FROM productos WHERE id = '".$x."'";
+for($x = 1; $x <= count($_POST['totalitem']); $x++) {
+        
+        $asd = $_POST['asd'.$x];
+		$sql = "SELECT * FROM productos WHERE id = '".$asd."'";
 		$result = mysqli_query($con,$sql);
 		// print_r($result);
 
 		while($row = mysqli_fetch_array($result)) {
 
-		$cantidad = $_POST['cantidad'.$x];
+		$cantidad = $_POST['cantidad'.$asd];
         
 		$nu1 = $row['precio'];
 		$nu2 = $cantidad;
