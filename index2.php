@@ -1,11 +1,6 @@
-<link rel="stylesheet" href="bootstrap.min.css">
-<script src="jquery.min.js"></script>
-<script src="bootstrap.min.js"></script>
-
 <?php 
 
-
-
+include "style.php";
 
 ?>
 
@@ -83,7 +78,7 @@ function showHint(str) {
                         <th>Cantidad</th>
                         <th>Precio</th>
                         <th>Total</th>
-                        <!-- <th>Acción</th> -->
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody id="ProSelected">
