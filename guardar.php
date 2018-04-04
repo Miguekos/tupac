@@ -130,5 +130,15 @@ if ($fact == $factP) {
 }
 
 // echo "<button href='index2.php' style='border-top-width: 1px; margin-top: 10px;' class='centro btn btn-success'>Vender</button>";
-echo "<a class='btn btn-success text-center centro' href='index2.php'> Nueva Vender</a>";
+echo "<a onkeypress='enter4()' id='nuevaventa' class='btn btn-success text-center centro' href='index2.php'> Nueva Venta</a>";
 ?>
+<script type="text/javascript">
+function enter4(){
+    if (event.keyCode == 13)
+    {
+      $('#nuevaventa').focus();
+      // $('#monto').val('');
+      // event.returnValue=false;
+    }
+}
+</script>

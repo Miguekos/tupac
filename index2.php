@@ -1,8 +1,13 @@
-<?php 
+<?php include 'header.php'; ?>
+<?php include 'style.php'; ?>
+<div class="topnav">
+  <a class="active" href="index2.php">Caja</a>
+  <a href="ventas.php">Facturas</a>
+  <a href="#contact">Productos</a>
+  <a class="pull-right">Caja Chica:</a>
+  <a class="pull-right">Total Caja: <?php echo number_format($total_caja, 2, ',', '.') ." S/"; ?></a>
+</div>
 
-include "style.php";
-
-?>
 
 <script>
 function showHint(str) {
@@ -21,6 +26,7 @@ function showHint(str) {
     }
 }
 </script>
+
 <div class="container text-center col-lg-12">
 <?php 
 
@@ -102,16 +108,15 @@ function showHint(str) {
             <!--Agregue un boton en caso de desear enviar los productos para ser procesados-->
             <div class="form-group">
                 
-                <button type="submit" onkeyup="submit()" id="imprimir" class="btn btn-lg btn-info pull-right">Imprimir</button>
+                <button type="submit" onkeyup="submit()" id="imprimir" class="btn btn-lg btn-success pull-right">Imprimir</button>
 
             </div>
         </from>
         <a class="btn btn-lg btn-danger pull-left" href="index2.php">Limpiar</a>
 
-        <a onclick="operar('multiplicar')">email me</a>
-        <a onclick="nombres()">nombres</a>
+        <!-- <a onclick="operar('multiplicar')">email me</a> -->
+        <a class="btn btn-lg btn-info" onclick="nombres()">Calcular</a>
         <!-- <button id="guardar"  name="guardar" class="btn btn-lg btn-danger pull-right">Calcular</button>  -->
-
 
         </div>
         </div>
